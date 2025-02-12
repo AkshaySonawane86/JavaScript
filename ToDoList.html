@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body
+        {
+            font-family: arial,sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input{
+            padding: 10px;
+            width: 200px;
+        }
+
+        button{
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li{
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .completed{
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter task...">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask()
+        {
+            let taskInput=document.getElementById("taskInput");
+            let taskText=taskInput.value.trim();
+            if(taskText === "")
+            {
+               alert("Please enter a task!");
+               return;
+            }
+
+            let li=document.createElement("li");
+            // li.innerHTML=`<span onclick="toggleTask(this)">${taskText}</span>
+            // <button onclick="removeTask(this)">X</button>
+            // `;
+
+            document.getElementById("taskList").appendChild(li);
+
+            let span=document.createElement("span");
+            span.textContent=taskText;
+            span.onclick=function(){
+                span.classList.toggle("completed");
+            };
+
+            let button=document.createElement("button");
+            button.textContent="X";
+            button.onclick=function(){
+                li.remove();
+            };
+
+            li.appendChild(span);
+            li.appendChild(button);
+
+            document.getElementById("taskList").appendChild(li);
+            taskInput.value="";
+            // taskInput.value=""; //Clear input field
+
+        }
+
+            // function toggleTask(task)
+            // {
+            //     task.classList.toggle("completed");
+            // }
+
+            // function removeTask(button)
+            // {
+            //     button.prentElement.remove();
+            // }
+        
+    </script>
+</body>
+</html>
