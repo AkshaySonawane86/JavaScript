@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message</title>
+    <link rel="stylesheet" href="css/ASpecialMessage.css" />
+</head>
+<body>
+    <h2>A Little Surprise for you!</h2>
+
+    <div class="card">
+        <img src="img/WhatsApp Image 2025-02-14 at 6.08.24 PM.jpeg" alt="Cute Image">
+        <p>Click the button below to see a Special Message</p>
+        <button onclick="showMessage()">Open</button>
+        <p class="message" id="hiddenMessage">You are an amazing person and I'm lucky to have you as a friend!</p>
+    </div>
+
+    <script>
+        function showMessage()
+        {
+            document.getElementById("hiddenMessage").style.display="block";
+        }
+    </script>
+</body>
+</html>
