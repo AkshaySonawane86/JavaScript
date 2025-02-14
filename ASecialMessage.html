@@ -13,13 +13,41 @@
         <img src="img/WhatsApp Image 2025-02-14 at 6.08.24 PM.jpeg" alt="Cute Image">
         <p>Click the button below to see a Special Message</p>
         <button onclick="showMessage()">💝Open</button>
+        <audio id="bgMusic" src="audio/WhatsApp Audio 2025-02-14 at 7.02.31 PM.mpeg" loop></audio>
+        <button onclick="playMusic()">🎵Play</button>
         <p class="message" id="hiddenMessage">You are an amazing person and I'm lucky to have you as a friend!😊💖</p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.0"></script>
     <script>
-        function showMessage()
+        // function showMessage()
+        // {
+        //     document.getElementById("hiddenMessage").style.display="block";
+        // }
+        function showMessage() {
+        let messages = [
+            "You are amazing! 😊💖",
+            "You make the world a better place! 🌎💖",
+            "Thank you for being such a great friend! 🥰",
+            "Stay happy and keep shining! ✨💖"
+        ];
+        let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById("hiddenMessage").textContent = randomMessage;
+        document.getElementById("hiddenMessage").style.opacity = "1";
+        
+        // 🎊 Confetti Effect 🎊
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }
+
+        function playMusic()
         {
-            document.getElementById("hiddenMessage").style.display="block";
+            let music=document.getElementById("bgMusic");
+            music.volume=0.5;
+            music.play();
         }
     </script>
 </body>

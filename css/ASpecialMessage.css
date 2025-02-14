@@ -31,13 +31,22 @@ img
     margin-bottom: 10px;
 }
 
-.message
+/* .message
 {
     font-size: 18px;
     font-weight: bold;
     color: #d63384;
     display: none;
     margin-top: 20px;
+} */
+
+.message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d63384;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 button
