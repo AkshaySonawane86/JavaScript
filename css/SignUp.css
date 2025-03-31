@@ -1,0 +1,59 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* align-self: center; */
+    background-color: #333;
+}
+
+.box
+{
+    width: 60%;
+    min-height: 550px;
+    border: 2px solid #333;
+    margin-top: 100px;
+    /* align-self: center; */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 0 200px;
+}
+
+.box h1
+{
+    color: #333;
+}
+
+.box label
+{
+    align-self: start;
+    margin-top: 10px;
+}
+
+.box input
+{
+    border-radius: 5px;
+    padding: 6px 5px;
+}
+
+.box button
+{
+    padding: 6px 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
